@@ -1,19 +1,20 @@
-apiVersion: apps/v1
-kind: Deployment
+#deployment manifest: deployment.yaml
+apiVersion: apps/v1                      #kubernetes API version
+kind: Deployment                         #type of K8 object, i.e., Deployment
 metadata:
-  name: webapp1
+  name: bootcamp                         #name of the deployment
 spec:
-  replicas: 1
+  replicas: 2                            #no. of Pods to run at any time
   selector:
     matchLabels:
-      app: webapp1
-  template:
+      app: webapp1.                      #labels should match to create a Pod
+  template:                              #defining Pod manifest
     metadata:
       labels:
-        app: webapp1
+        app: webapp1                     #labels should match to create a Pod
     spec:
       containers:
-      - name: webapp1
-        image: katacoda/docker-http-server:latest
+      - name: bootcamp-app-container             #name of the container
+        image: katacoda/docker-http-server:v2    #name of the container image
         ports:
-        - containerPort: 80
+        - containerPort: 80.                     #application listening/running port
