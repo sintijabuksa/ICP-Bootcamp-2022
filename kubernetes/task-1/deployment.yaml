@@ -7,7 +7,7 @@ spec:
   replicas: 2                            #no. of Pods to run at any time
   selector:
     matchLabels:
-      app: webapp1.                      #labels should match to create a Pod
+      app: webapp1                       #labels should match to create a Pod
   template:                              #defining Pod manifest
     metadata:
       labels:
@@ -17,4 +17,4 @@ spec:
       - name: bootcamp-app-container             #name of the container
         image: katacoda/docker-http-server:v2    #name of the container image
         ports:
-        - containerPort: 80.                     #application listening/running port
+        - containerPort: 80                      #application listening/running port
